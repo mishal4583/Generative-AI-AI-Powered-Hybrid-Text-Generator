@@ -1,0 +1,77 @@
+/* Custom styles with black/gray color scheme */
+:root {
+    --primary-light: #E5E7EB;
+    --primary-medium: #D1D5DB;
+    --primary-dark: #4B5563;
+    --background-light: #F9FAFB;
+    --background-dark: #1F2937;
+    --text-light: #F9FAFB;
+    --text-dark: #111827;
+    --border-light: #E5E7EB;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-button {
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+}
+
+#ngramPlot {
+    display: none;
+}
+
+#errorOutput {
+    transition: all 0.3s ease;
+}
+
+/* Loading spinner animation */
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Error message animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#errorOutput.show {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
